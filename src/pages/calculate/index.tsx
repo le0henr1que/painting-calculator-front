@@ -34,9 +34,7 @@ function Calculate() {
     }
     function replaceValue(value: number | string | any | undefined){
         
-        if(isNaN(value)) {
-            return 
-         }
+
         if(value.includes(',')){
             return +value.replace(",", ".")
         }
