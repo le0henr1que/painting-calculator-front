@@ -28,6 +28,12 @@ function Calculate() {
             setCount(4);
         }
     }
+    function replaceValue(value: number | string | any){
+        if(value.includes(',')){
+            return +value.replace(",", ".")
+        }
+        return +value
+    }
 
     async function handleLogin(event: FormEvent){
         setLoad("Calculando...")
@@ -39,20 +45,20 @@ function Calculate() {
                 "wall":{
                     "measure":[
                         { 
-                            "height":+data.height0,
-                            "width":+data.width0
+                            "height":replaceValue(data.height0),
+                            "width":replaceValue(data.width0)
                         },
                           { 
-                            "height":+data.height1,
-                            "width":+data.width1
+                            "height":replaceValue(data.height1),
+                            "width":replaceValue(data.width1)
                         },
                           { 
-                            "height":+data.height2,
-                            "width":+data.width2
+                            "height":replaceValue(data.height2),
+                            "width":replaceValue(data.width2)
                         },
                           { 
-                            "height":+data.height3,
-                            "width":+data.width3
+                            "height":replaceValue(data.height3),
+                            "width":replaceValue(data.width3)
                         }
                     ]
                 },
@@ -77,6 +83,7 @@ function Calculate() {
         }
 
         console.log(sendArray)
+        
         await api.post(`/calculate`, sendArray)
         .then(response => {
             console.log(response)
@@ -113,12 +120,21 @@ function Calculate() {
             <div className='title'>
                 <span>Calculadora de <span>tinta</span></span>
             </div>
+            <div className='alert'>
+                <h2>Observações</h2>
+                <ul>
+                    <li><p>O total de área das portas e janelas deve ser no máximo 50% da área de parede.</p></li>
+                    <li><p>A altura de paredes com porta deve ser, no mínimo, 30 centímetros maior que a altura da porta.</p></li>
+                    <li><p>A área da janela somado com a área da porta não pode ser menor que o total da área das paredes.</p></li>
+                    <li><p>Nenhuma parede pode ter menos de 1 metro quadrado nem mais de 50 metros quadrados.</p></li>
+                </ul>
+            </div>
 
             <div className='content-inputs'>
                 <form onSubmit={handleLogin} >
                     {componentsWall}
                     <div className='add-component' onClick={handleAddWall}>Adicionar Parede</div>
-                    
+                    <p>A altura da parede deve ser igual para todos os lados</p>
                     <Wall 
                         label1="Quantidade de porta" 
                         label2="Quantidade de janela"
@@ -140,7 +156,7 @@ function Calculate() {
             {responseCalc?.AreaTotal !== 0 && responseCalc?.AreaTotal &&
 
             <div className='title-ink'>
-                <p>Uma vez que 5 litros de tinta pintam 1 m², para pintar um ambiente com a área de {responseCalc?.AreaTotal} m² desconsiderando portas e janelas você vai precisar 
+                <p>Uma vez que cada litros de tinta pintam 5 m², para pintar um ambiente com a área de {responseCalc?.AreaTotal} m² desconsiderando portas e janelas você vai precisar 
                 de {responseCalc?.totalInk} litros de tinta, o mesmo que:
                 </p>
                 <div className='response-ink'>

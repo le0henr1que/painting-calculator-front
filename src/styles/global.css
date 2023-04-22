@@ -4,7 +4,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 input, select{
@@ -57,11 +57,20 @@ input, select{
 
   }
   
-  p{
+  .title-ink p {
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    /* line-height: 48px; */
+    color: #007FFF;
+  }
+    
+  .content-inputs  p{
     font-family: sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     /* line-height: 48px; */
-    color: #007FFF;
+    color: #1E1A17;
   }
