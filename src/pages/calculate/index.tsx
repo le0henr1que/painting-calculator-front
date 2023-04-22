@@ -29,7 +29,7 @@ function Calculate() {
         }
     }
     function replaceValue(value: number | string | any){
-        if(value.includes(',')){
+        if(value.includes(',') && value){
             return +value.replace(",", ".")
         }
         return +value
