@@ -42,7 +42,7 @@ Para executar o projeto basta seguir as etapas:
 crie um arquivo .env com uma variavel `REACT_APP_BACKEND_URL` que vai ser responsavel pela a chamada do back end, ao executar o backend certifique de adicionar a porta correta, exemplo:
 
 ```
-http://localhost:5000
+http://localhost:3000
 ```
 
 ### Instalação das Dependências run:
