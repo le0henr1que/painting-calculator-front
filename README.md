@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+# Calculadora de consumo de tinta 
+[![GitHub issues](https://img.shields.io/github/issues/le0henr1que/desafio-verzel-Back-end.svg)](https://github.com/le0henr1que/desafio-verzel-Back-end/issues)
+[![GitHub forks](https://img.shields.io/github/forks/sle0henr1que/desafio-verzel-Back-end.svg)](https://github.com/le0henr1que/desafio-verzel-Back-end/network)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um projeto que visa fornecer uma API RESTful para o calculo de consumo de tinta dependendo da área de um determinado local. Com ele, é possível retornar o uso adequado para cada medida de tinta.
 
-## Available Scripts
+A API foi construída usando Node.js com Express, e teve como pricipal objetivo auxiliar os pintores a calcular a quantidade de tinta necessária para um determinado ambiente.
 
-In the project directory, you can run:
+## 🚀 Começando
 
-### `npm start`
+Para obter uma copia do projeto para execução basta seguir as etapas:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clonar repositorio:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Github:
+```
+git clone https://github.com/le0henr1que/painting-calculator-front.git
+```
+ou Gitlab:
+```
+git clone https://gitlab.com/le0henr1que/painting-calculator-front.git
+```
+## 📋 Documentação
 
-### `npm test`
+A documentação da API está disponível em /api/docs , Ela fornece informações detalhadas sobre as rotas disponíveis e os parâmetros de entrada e saída.
+Acesso para teste da área ADM:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Documentação: https://painting-calculator-production.up.railway.app/api/docs/
+* Documentação local: http://localhost:<PORTA>/api/docs/
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 📋 Pré-requisitos
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para execução do projeto é preciso:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Gerenciador de pacotes;
+* Node JS
 
-### `npm run eject`
+### 🔧 Execução
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Para executar o projeto basta seguir as etapas:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Instalação das Dependências run:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+npm i
+```
+ou 
+```
+npm install
+```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Iniciar em modo desenvolvimento:
+```
+npm run dev:server
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🏃 Page
+
