@@ -118,3 +118,10 @@
 .title-ink p{
     color: #2B2B2B !important;
 }
+
+
+@media screen and (max-width: 984px) {
+    .containerMain{
+        width: 90% !important;
+    }
+}

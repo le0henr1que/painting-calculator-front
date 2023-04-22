@@ -164,7 +164,6 @@ function Calculate() {
                 <form onSubmit={handleLogin} >
                     {componentsWall}
                     <div className='add-component' onClick={handleAddWall}>Adicionar Parede</div>
-                    <p>A altura da parede deve ser igual para todos os lados</p>
                     <Wall 
                         label1="Quantidade de porta" 
                         label2="Quantidade de janela"
