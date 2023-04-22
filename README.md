@@ -26,8 +26,7 @@ A documentação da API está disponível em /api/docs , Ela fornece informaçõ
 Acesso para teste da área ADM:
 
 * Documentação: https://painting-calculator-production.up.railway.app/api/docs/
-* Documentação local: http://localhost:<PORTA>/api/docs/
-
+* Documentação local: http://localhost:`PORTA`/api/docs/
 
 ### 📋 Pré-requisitos
 
@@ -40,6 +39,11 @@ Para execução do projeto é preciso:
 
 Para executar o projeto basta seguir as etapas:
 
+crie um arquivo .env com uma variavel `REACT_APP_BACKEND_URL` que vai ser responsavel pela a chamada do back end, ao executar o backend certifique de adicionar a porta correta, exemplo:
+
+```
+http://localhost:5000
+```
 
 ### Instalação das Dependências run:
 
@@ -58,4 +62,5 @@ npm run dev:server
 ```
 
 ## 🏃 Page
+![image](https://user-images.githubusercontent.com/68018921/233802536-b07c0878-7dc8-453c-8a96-5dbf19c72523.png)
 
