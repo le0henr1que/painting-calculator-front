@@ -58,7 +58,7 @@ npm install
 
 ## Iniciar em modo desenvolvimento:
 ```
-npm run dev:server
+npm run start
 ```
 
 ## 🏃 Page
