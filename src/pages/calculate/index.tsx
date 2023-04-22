@@ -29,7 +29,16 @@ function Calculate() {
         }
     }
     function replaceValue(value: number | string | any){
-        if(value.includes(',') && value){
+        if(typeof value == 'undefined') {
+           return 
+        }
+        if(value !== null) {
+            return 
+        }
+        if(isNaN(value)) {
+            return 
+         }
+        if(value.includes(',')){
             return +value.replace(",", ".")
         }
         return +value
