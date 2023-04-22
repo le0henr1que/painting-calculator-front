@@ -12,6 +12,10 @@ interface CansNeeded {
     AreaTotal: number;
     totalInk:number;
   }
+interface Area {
+    height:number | undefined;
+    width:number | undefined;
+}
   
 
 function Calculate() {
@@ -28,13 +32,8 @@ function Calculate() {
             setCount(4);
         }
     }
-    function replaceValue(value: number | string | any){
-        if(typeof value == 'undefined') {
-           return 
-        }
-        if(value !== null) {
-            return 
-        }
+    function replaceValue(value: number | string | any | undefined){
+        
         if(isNaN(value)) {
             return 
          }
@@ -50,26 +49,11 @@ function Calculate() {
         const formData = new FormData(event.target as HTMLFormElement)
         const data = Object.fromEntries(formData)
 
+       
+
         const sendArray = {
                 "wall":{
-                    "measure":[
-                        { 
-                            "height":replaceValue(data.height0),
-                            "width":replaceValue(data.width0)
-                        },
-                          { 
-                            "height":replaceValue(data.height1),
-                            "width":replaceValue(data.width1)
-                        },
-                          { 
-                            "height":replaceValue(data.height2),
-                            "width":replaceValue(data.width2)
-                        },
-                          { 
-                            "height":replaceValue(data.height3),
-                            "width":replaceValue(data.width3)
-                        }
-                    ]
+                    "measure":[]
                 },
                 
                 "door":{
@@ -80,6 +64,45 @@ function Calculate() {
                     "measure":[{"height":1.20, "width":2.00}]
                 } 
         }
+        
+        
+        if(data.height0 && data.width0){
+            
+            const wallOne:Area = {
+                "height":replaceValue(data.height0), 
+                "width":replaceValue(data.width0)
+            }
+            // @ts-ignore
+            sendArray.wall.measure.push(wallOne)
+        }
+        if(data.height1 && data.width1){
+            
+            const wallTwo:Area = {
+                "height":replaceValue(data.height1), 
+                "width":replaceValue(data.width1)
+            }
+            // @ts-ignore
+            sendArray.wall.measure.push(wallTwo)
+        }
+        if(data.height2 && data.width2){
+            
+            const wallThree:Area = {
+                "height":replaceValue(data.height2), 
+                "width":replaceValue(data.width2)
+            }
+            // @ts-ignore
+            sendArray.wall.measure.push(wallThree)
+        }
+        if(data.height3 && data.width3){
+            
+            const wallFour:Area = {
+                "height":replaceValue(data.height3), 
+                "width":replaceValue(data.width3)
+            }
+            // @ts-ignore
+            sendArray.wall.measure.push(wallFour)
+        }
+
 
         sendArray.door.measure.length = 0
         for(var door = 0; door < +data.amountDoor; door++){
